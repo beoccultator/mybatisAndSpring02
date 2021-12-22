@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.StudentDao">
+    <select id="selectAll" resultType="com.test.bean.Student">
+        select * from Student
+    </select>
+
+    <select id="selectOne" resultType="com.test.bean.Student">
+        select * from Student where id=#{id}
+    </select>
+
+    <insert id="insertOne">
+        insert into Student(name,sex,specialty,grade)
+        values (#{name},#{sex},#{specialty},#{grade})
+    </insert>
+
+    <delete id="deleteOne">
+        delete from Student where id=#{id}
+    </delete>
+
+    <update id="updateOne">
+        update Student set name=#{name},sex=#{sex},specialty=#{specialty},grade=#{grade}
+        where id=#{id}
+    </update>
+
+</mapper>
